@@ -1,6 +1,8 @@
-var fs = require('fs');
-require('date-utils');
+var fs = require('fs'),
+    path = require('path'),
+    root = path.resolve(__dirname, './');
 
+require('date-utils');
 
 /**
  * @name replaceDates
@@ -22,7 +24,7 @@ function dateReplace() {
 
     function setL10n(newLang) {
         try{
-            l10n = fs.readFileSync('l10n/' + newLang + '.json', 'utf8');
+            l10n = fs.readFileSync(root + '/l10n/' + newLang + '.json', 'utf8');
             l10n = JSON.parse(l10n);
             lang = newLang;
         }catch(e) {
