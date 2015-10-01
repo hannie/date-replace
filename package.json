@@ -1,6 +1,6 @@
 {
   "name": "date-replace",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Replaces a date string with an actual date",
   "main": "date-replace.js",
   "scripts": {
@@ -11,5 +11,8 @@
     "url": "https://github.com/rsids/date-replace.git"
   },
   "author": "Ids Klijnsma",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "date-utils": "http://github.com/JerrySievert/date-utils.git"
+  }
 }
