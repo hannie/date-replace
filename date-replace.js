@@ -1,4 +1,4 @@
-var fs = require('');
+var fs = require('fs');
 
 /**
  * @name replaceDates
