@@ -36,7 +36,7 @@ function dateReplace() {
 
     function l10nReplace(match) {
         match = match.replace(/<<month:(\d+)>>/g, function(match, month) {
-            return l10n.months[month];
+            return l10n.months[month-1];
         });
 
         match = match.replace(/<<day:(\d+)>>/g, function(match, day) {
