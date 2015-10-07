@@ -14,6 +14,8 @@ require('date-utils');
  * You can also subtract weeks/months/years
  */
 function dateReplace() {
+    'use strict';
+
     var lang = 'nl',
         l10n;
 
@@ -64,8 +66,8 @@ function dateReplace() {
             mmmlong = false;
 
         if (props.length === 2) {
-            dateAdd = props[0].replace(/"/g, '');
-            dateFormat = props[1].replace(/"/g, '').replace(' ', '').toUpperCase();
+            dateAdd = props[0].replace(/['"]/g, '');
+            dateFormat = props[1].replace(/['"]/g, '').replace(' ', '').toUpperCase();
 
             if (dateAdd.indexOf('d') > 0) {
                 dateAdd = parseInt(dateAdd.replace('d', ''));
@@ -83,7 +85,7 @@ function dateReplace() {
             today.add(addObject);
 
         } else {
-            dateFormat = props[0].replace(/"/g, '').replace(' ', '').toUpperCase();
+            dateFormat = props[0].replace(/['"]/g, '').replace(' ', '').toUpperCase();
         }
 
         if (dateFormat.indexOf('MMMLONG') > -1) {

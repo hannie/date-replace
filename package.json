@@ -1,6 +1,6 @@
 {
   "name": "date-replace",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Replaces a date string with an actual date",
   "main": "date-replace.js",
   "scripts": {
