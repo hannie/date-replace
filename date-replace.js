@@ -39,6 +39,10 @@ function dateReplace() {
             return l10n.months[month-1];
         });
 
+         match = match.replace(/<<monthShort:(\d+)>>/g, function(match, month) {
+            return l10n.monthsShort[month-1];
+        });
+
         match = match.replace(/<<day:(\d+)>>/g, function(match, day) {
             return l10n.days[day];
         });
@@ -63,7 +67,7 @@ function dateReplace() {
                 months: 0,
                 years: 0
             },
-            mmmlong = false;
+            l10Replace = false;
 
         if (props.length === 2) {
             dateAdd = props[0].replace(/['"]/g, '');
@@ -89,12 +93,17 @@ function dateReplace() {
         }
 
         if (dateFormat.indexOf('MMMLONG') > -1) {
-            mmmlong = true;
+            l10Replace = true;
             dateFormat = dateFormat.replace('MMMLONG', '<<month:M>>');
         }
 
+        if (dateFormat.indexOf('MMMSHORT') > -1) {
+            l10Replace = true;
+            dateFormat = dateFormat.replace('MMMSHORT', '<<monthShort:M>>');
+        }
+
         dateReturn = today.toFormat(dateFormat);
-        if (mmmlong) {
+        if (l10Replace) {
             dateReturn = l10nReplace(dateReturn);
         }
         return dateReturn;

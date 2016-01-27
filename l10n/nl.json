@@ -13,6 +13,20 @@
     "november",
     "december"
   ],
+  "monthsShort": [
+    "jan",
+    "feb",
+    "mrt",
+    "apr",
+    "mei",
+    "jun",
+    "jul",
+    "aug",
+    "sep",
+    "okt",
+    "nov",
+    "dec"
+  ],
   "days": [
     "zondag",
     "maandag",
