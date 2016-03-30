@@ -90,7 +90,7 @@ function dateReplace() {
                 if(addObject.days > 0) {
                     today.addDays(addObject.days);
                 } else {
-                    today.removeDays(addObject.days);
+                    today.removeDays(Math.abs(addObject.days));
                 }
             }
 
@@ -98,7 +98,7 @@ function dateReplace() {
                 if(addObject.months > 0) {
                     today.addMonths(addObject.months);
                 } else {
-                    today.removeMonths(addObject.months);
+                    today.removeMonths(addObject.months); // Don't need Math.abs here in order to fix wrong calculation
                 }
             }
 
@@ -106,7 +106,7 @@ function dateReplace() {
                 if(addObject.years > 0) {
                     today.addYears(addObject.years);
                 } else {
-                    today.removeYears(addObject.years);
+                    today.removeYears(Math.abs(addObject.years));
                 }
             }
 
