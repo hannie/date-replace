@@ -86,7 +86,29 @@ function dateReplace() {
                 addObject.years = dateAdd;
             }
 
-            today.add(addObject);
+            if(addObject.days !== 0) {
+                if(addObject.days > 0) {
+                    today.addDays(addObject.days);
+                } else {
+                    today.removeDays(addObject.days);
+                }
+            }
+
+            if(addObject.months !== 0) {
+                if(addObject.months > 0) {
+                    today.addMonths(addObject.months);
+                } else {
+                    today.removeMonths(addObject.months);
+                }
+            }
+
+            if(addObject.years !== 0) {
+                if(addObject.years > 0) {
+                    today.addYears(addObject.years);
+                } else {
+                    today.removeYears(addObject.years);
+                }
+            }
 
         } else {
             dateFormat = props[0].replace(/['"]/g, '').replace(' ', '').toUpperCase();
